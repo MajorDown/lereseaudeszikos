@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+    <title>le Réseau des zikos - Créer mon Profil</title>
+</head>
+<body>
+    <header>
+        <h1>Le Réseau des zikos</h1>
+        <ul id="headerList">
+            <li id="accueil"><a href="index.html">Accueil</a></li>
+            <li id="messenger"><a href="messagerie.html">Messagerie</a></li>
+            <li id="connection"><a href="connection.html">Se connecter</a></li>
+            <li id="modifierMonProfil"><a href="modifierMonProfil.html">Mon profil</a></li>
+        </ul>
+    </header>
+    <main>
+        <h2>Créez votre Profil personnalisé</h2>
+        <form id="nouveauProfil">
+            <h4>Quel seras votre pseudo ?</h4>
+                <input type="text" name="pseudo" id="pseudo" required>
+            <h4>Quelle est votre date de naissance ?</h4>
+                <input type="date" name="birth" id="birth" required>
+            <h4>Vous êtes un(e) :</h4>
+                <select name="genre" id="genre" required>
+                    <option selected value="homme">homme</option>
+                    <option value="femme">femme</option>
+                </select>
+            <h4>Vers ou habitez-vous ?</h4>
+                <div>placez votre lieu de résidence sur la carte ci-dessous</div>
+                <div>coordonnées du point : </div>
+                <div>lattitude : <span name="lattitude" id="lattitude"></span><br>
+                     longitude : <span name="longitude" id="longitude"></span>
+                </div>
+                <input type="number" step="0.000000000000000001" name="lat" id="lat">
+                <input type="number" step="0.000000000000000001" name="lon" id="lon">
+                <div id="mapCreerMonProfil"></div>
+            <h4>Décrivez-vous en quelques mots : </h4>
+                <textarea name="description" id="description" cols="50" rows="2" maxlength="200" placeholder="votre description"></textarea>
+            <h4>De quel instrument(s) jouez-vous ?</h4>
+                <div>(cochez au minimum un instrument)</div>
+                <input type="checkbox" name="instruments" id="guitareAcoustique" value="guitareAcoustique">guitare acoustique
+                <input type="checkbox" name="instruments" id="guitareElectrique" value="guitareElectrique">guitare électrique
+                <input type="checkbox" name="instruments" id="guitareBasse" value="guitareBasse">guitare basse
+                <input type="checkbox" name="instruments" id="ukulele" value="ukulele">ukulele
+                <input type="checkbox" name="instruments" id="mandoline" value>mandoline
+                <input type="checkbox" name="instruments" id="banjo" value="banjo">banjo
+                <input type="checkbox" name="instruments" id="luth" value="luth">luth
+                <input type="checkbox" name="instruments" id="bouzouki" value="bouzouki">bouzouki
+                <input type="checkbox" name="instruments" id="harpe" value="harpe">harpe
+                <input type="checkbox" name="instruments" id="autreCorde" value="autreCorde">autre instrument à corde <br>
+                <input type="checkbox" name="instruments" id="batterie" value="batterie">batterie
+                <input type="checkbox" name="instruments" id="percussions" value="percussions">percussions <br>
+                <input type="checkbox" name="instruments" id="chant" value="chant">chant
+                <input type="checkbox" name="instruments" id="piano" value="piano">piano
+                <input type="checkbox" name="instruments" id="clavier" value="clavier">clavier <br>
+                <input type="checkbox" name="instruments" id="violonAlto" value="violonAlto">violon / alto
+                <input type="checkbox" name="instruments" id="violoncelle" value="violoncelle">violoncelle
+                <input type="checkbox" name="instruments" id="contrebasse" value="contrebasse">contrebasse <br>
+                <input type="checkbox" name="instruments" id="trompette" value="trompette">trompette
+                <input type="checkbox" name="instruments" id="trombone" value="trombone">trombone
+                <input type="checkbox" name="instruments" id="saxophone" value="saxophone">saxophone
+                <input type="checkbox" name="instruments" id="autreCuivre" value="autreCuivre">autre cuivre <br>
+                <input type="checkbox" name="instruments" id="fluteABec" value="fluteABec">flute à bec
+                <input type="checkbox" name="instruments" id="fluteTraversiere" value="fluteTraversiere">flute traversière
+                <input type="checkbox" name="instruments" id="fluteDePan" value="fluteDePan">flute de pan
+                <input type="checkbox" name="instruments" id="ocarina" value="ocarina">ocarina
+                <input type="checkbox" name="instruments" id="harmonica" value="harmonica">harmonica <br>
+                <input type="checkbox" name="instruments" id="autreInstru" value="autreInstru">autre instrument (précisez en description)
+            <h4>De quels styles de musique jouez-vous ?</h4>
+                <div>(cochez au minimum un style)</div>
+                <input type="checkbox" name="style" id="classique" value="classique">classique / baroque
+                <input type="checkbox" name="style" id="rock" value="rock">rock
+                <input type="checkbox" name="style" id="rockabilly" value="rockabilly">rockabilly
+                <input type="checkbox" name="style" id="hardRock" value="hardRock">hard-rock
+                <input type="checkbox" name="style" id="metal" value="metal">métal
+                <input type="checkbox" name="style" id="blackMetal" value="blackMetal">black metal
+                <input type="checkbox" name="style" id="vpg" value="vpg">vegetarian progressive grindcore
+                <input type="checkbox" name="style" id="folk" value="folk">folk
+                <input type="checkbox" name="style" id="blues" value="blues">blues
+                <input type="checkbox" name="style" id="progressif" value="preogressif">progressif
+                <input type="checkbox" name="style" id="fusion" value="fusion">fusion
+                <input type="checkbox" name="style" id="jazz" value="jazz">jazz
+                <input type="checkbox" name="style" id="pagan" value="pagan">pagan
+                <input type="checkbox" name="style" id="autreStyle" value="autreStyle">autre (précisez en description)
+            <h4>Vous êtes plutôt :</h4>
+                <select name="compoOrCover" id="compoOrCover">
+                    <option selected value="Compo">compo'</option>
+                    <option value="reprise">reprise</option>
+                    <option value="les deux">les deux</option>
+                </select>
+
+            <h4>Êtes-vous intermittent du spectacle ?</h4>
+                <select name="intermittent" id="intermittent">
+                    <option selected value="non">non</option>
+                    <option value="oui">oui</option>
+                </select>
+            <h4>Faites-vous partie d'un (ou de plusieurs) groupe(s) ?</h4>
+                <select name="haveABand" id="haveABand">
+                    <option selected value="non">non</option>
+                    <option value="oui">oui</option>
+                </select>
+            <h4>Etes-vous à la recherche d'un nouveau groupe ?</h4>
+                <select name="needABand" id="needABand">
+                    <option selected value="non">non</option>
+                    <option value="oui">oui</option>
+                </select>
+            <h4>Postez ici un lien illustrant votre oeuvre (audio, vidéo, site perso...) :</h4>
+                <input type="url" name="publication" id="publication" placeholder="http://www.votresite.com"></select>
+            <h4>...ça y est ? tout est remplie ?</h4>
+            <div>...et bah non ! il manque encore vos identifiants, indispensable pour vous connecter</div>
+                <h4>votre adresse mail :</h4>
+                    <input type="mail" name="mail" id="mail" required>
+                <h4>Votre mot de passe :</h4>
+                    <input type="text" name="mdp" id="mdp" required>
+                <h4>...vous êtes sur ? retapez-le pour voir...</h4>
+                    <input type="text" name="mdp2" id="mdp2" required> <br>
+                    <span type="text" name="verifMdp" id="verifMdp"></span>
+                <h4>Bon... et bien dans ce cas... on est parti !</h4>
+
+
+            <button type="submit" id="createProfil" value="Créer mon Profil">Créer mon profil</button>
+        </form>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/mapCreerMonProfil.js"></script>
+    <script>
+        const verifMdp = document.getElementById('verifMdp');
+        const mdp = document.getElementById('mdp');
+        const mdp2 = document.getElementById('mdp2');
+        const submit = document.getElementById('createProfil');
+        function verif(x,y) {
+            if(x.value != y.value) {
+                verifMdp.textContent = ("les mots de passe saisies ne corespondent pas !");
+                return false; 
+            }
+            else {
+                verifMdp.textContent = ("les mots de passe corespondent. on est bon.");
+                return true;}
+        }
+        verif(mdp, mdp2);
+    </script>
+    <script src="js/formulaireVersObjet.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+* {
+    padding : 0;
+    margin : 0;
+}
+body {
+    height: 100vh; /*hauteur - vh=virtual height*/
+    font-family: serif; /*utilisation d'une police*/
+    font-size: 1rem; /*taillz de la police - 1rem=8px*/
+    text-align: center; /*aligner le texte au centre*/
+    color: rgb(1, 31, 7); /*couleur de police*/
+    background: url(/img/site-background.jpg) /*image mise en fond*/ 
+        no-repeat fixed top; /*empeche la répétition, priorité au haut de l'image*/
+}
+
+/******HEADER******/
+/*icones a utiliser : 
+<a href="https://www.flaticon.com/fr/icones-gratuites/gens" title="gens icônes">Gens icônes créées par adrianadam - Flaticon</a>
+<a href="https://www.flaticon.com/fr/icones-gratuites/discours" title="discours icônes">Discours icônes créées par adrianadam - Flaticon</a>
+<a href="https://www.flaticon.com/fr/icones-gratuites/cartes-et-emplacement" title="cartes et emplacement icônes">Cartes et emplacement icônes créées par adrianadam - Flaticon</a>
+
+*/
+header {
+    background: rgba(212, 212, 233, 0.592); /*couleur en fond*/
+    width: 95%; /*largeur du main*/
+    height: 50px; /*hauteur minimale*/
+    margin: 10px auto; /*marge ext*/
+    padding: 10px; /*marge int*/
+    border-radius: 20px; /*arrondir les bordure*/
+    box-shadow: 5px 5px 0px 0px rgba(3, 3, 29, 0.351); /*ombre du main*/
+    display: grid; /*déclaration du grid*/
+    grid-template-columns: 60% 40%;  /*répartition des colonnes*/
+}
+h1 {
+    margin-top : -10px;
+    font-family: 'Rock salt', cursive;
+}
+#headerList {
+    display: grid; /*déclaration du grid*/
+    grid-template-columns: 25% 25% 25% 25%;  /*répartition des colonnes*/
+}
+#headerList li {
+    list-style-type: none;
+    font-size: 0.7rem;
+    height: 40px;
+    width: 60px;
+    margin:5px;
+    background: rgba(201, 204, 174, 0.926);
+    border-radius: 10px; /*arrondir les bordure*/
+    display: flex; /*déclaration de flexbox dans chaque élément*/
+    justify-content:space-around; /*elements du flexbox espacés*/
+    align-items: center; /*alignement et centrage des elements*/
+    justify-content: center;
+}
+
+/******MAIN******/
+main {
+    background: rgba(212, 212, 233, 0.66); /*couleur en fond*/
+    width: 95%; /*largeur du main*/
+    min-height: 500px; /*hauteur minimale*/
+    margin: 10px auto; /*marge ext*/
+    padding: 10px; /*marge int*/
+    border-radius: 20px; /*arrondir les bordure*/
+    box-shadow: 5px 5px 0px 0px rgba(3, 3, 29, 0.351); /*ombre du main*/
+}
+h2 {
+    font-size: 2em;
+}
+#mapSearch { 
+    z-index: 5;
+    border-radius: 10px;
+    height: 500px; 
+}
+#mapCreerMonProfil {
+    z-index: 5;
+    border-radius: 10px;
+    height: 300px;
+}
+#mapMonProfil {
+    z-index: 5;
+    border-radius: 10px;
+    height: 300px;
+}
+h4 {
+    font-family: sans-serif;
+    font-size: 1.3em;
+}
+#creerMonProfil {
+    font-family: consolas;
+    font-size: 1em;
+}
+#modifierMonProfil {
+    font-family: consolas;
+    font-size: 1em;
+}
+
+#profil {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    right : 60px;
+    top: 190px;
+    background: url(img/profil-background.png) center no-repeat;
+    border: 2px outset rgba(27,164,146,0.59);
+    border-radius: 0px 20px 20px 0px;
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    width : 385px;
+    min-height : 400px;
+    padding: 10px;
+    text-align: center;
+    font-family: consolas;
+} 
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background: url(/img/profil-background.png);
+}
+
+
+/******FOOTER******/
+footer {
+    background: rgba(212, 212, 233, 0.629); /*couleur en fond*/
+    width: 95%; /*largeur du main*/
+    min-height: 50px; /*hauteur minimale*/
+    margin: 10px auto; /*marge ext*/
+    padding: 10px; /*marge int*/
+    border-radius: 20px; /*arrondir les bordure*/
+    box-shadow: 5px 5px 0px 0px rgba(3, 3, 29, 0.351); /*ombre du main*/
+}

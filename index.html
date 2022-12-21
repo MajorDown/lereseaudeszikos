@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <link rel="stylesheet" href="style.css">
+     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+    <title>le Réseau des zikos - Accueil</title>
+</head>
+<body>
+    <header>
+        <h1>Le Réseau des zikos</h1>
+        <ul id="headerList">
+            <li id="accueil"><a href="index.html">Accueil</a></li>
+            <li id="messenger"><a href="messagerie.html">Messagerie</a></li>
+            <li id="connection"><a href="connection.html">Se connecter</a></li>
+            <li id="modifierMonProfil"><a href="modifierMonProfil.html">Mon profil</a></li>
+        </ul>
+    </header>
+    <main>
+        <h2>Carte Interactive</h2>
+        <div>découvrez les profils inscrits à ce jour</div>
+        <div id ="mapSearch">
+        </div>
+        <div id="profil">
+            <div style="text-align : left">
+                <button id="fermerCeProfil">Fermer ce profil</button>
+            </div>
+            Pseudo : <span id="pseudo"></span><br>
+            sexe : <span id="genre"></span><br>
+            date de naissance : <span id="birth"></span><br>
+            description : <span id="description"></span><br>
+            instrument(s) : <span id="instruments"></span><br>
+            Style(s) : <span id="style"></span><br>
+            plutôt compo ou reprise : <span id="compoOrcover"></span><br>
+            intermittent : <span id="intermittent"></span><br>
+            joue dans un groupe : <span id="haveABand"></span><br>
+            recherche un nouveau groupe : <span id="needABand"></span><br>
+            sa publicité : <a><span id="publication"></span></a>
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/mapSearch.js"></script>    
+</body>
+</html>
